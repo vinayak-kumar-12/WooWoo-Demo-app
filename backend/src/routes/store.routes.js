@@ -19,12 +19,12 @@ const {
 
 const { authenticateAccessToken } = require("../middlewares/auth.middleware");
 
-// Apply authentication middleware to all store routes
-router.use(authenticateAccessToken);
-
-// Products
+// Products - Public routes
 router.get("/products", getProducts);
 router.get("/products/:id", getProductById);
+
+// Apply authentication middleware to remaining store routes (Cart, Orders, Payments)
+router.use(authenticateAccessToken);
 
 // Cart
 router.get("/cart", getCart);

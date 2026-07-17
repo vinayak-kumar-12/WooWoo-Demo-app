@@ -1,0 +1,156 @@
+export const MOCK_ACTIVITIES = [
+  {
+    id: 'ACT-1001',
+    type: 'store_order',
+    title: 'Silent Symphony (Original Painting)',
+    subtitle: 'ORD-9283-A',
+    date: '2026-07-17',
+    status: 'completed',
+    price: '$1,250.00',
+    orderId: 'ORD-9283-A',
+    image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=400',
+  },
+  {
+    id: 'ACT-1002',
+    type: 'space_booking',
+    title: 'Creative Suite Loft',
+    subtitle: '4 Hours • 3 Guests',
+    date: '2026-07-20',
+    time: '10:00 AM - 2:00 PM',
+    duration: '4 hours',
+    guests: 3,
+    status: 'confirmed',
+    price: '$160.00',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=400',
+  },
+  {
+    id: 'ACT-1003',
+    type: 'service_request',
+    title: 'Custom Canvas Restoration',
+    subtitle: 'Assigned: Elena Rostova',
+    date: '2026-07-16',
+    status: 'in_progress',
+    description: 'Varnish removal and minor tear repair for an antique 19th-century oil landscape painting.',
+    assignedStaff: 'Elena Rostova',
+    image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=400',
+  },
+  {
+    id: 'ACT-1004',
+    type: 'event_workshop',
+    title: 'Abstract Watercolor Masterclass',
+    subtitle: 'Instructor: Arthur Pendelton',
+    date: '2026-07-22',
+    time: '6:00 PM - 8:30 PM',
+    instructor: 'Prof. Arthur Pendelton',
+    status: 'confirmed',
+    image: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=400',
+  },
+  {
+    id: 'ACT-1005',
+    type: 'store_order',
+    title: 'Golden Reverie (Bronze Sculpture)',
+    subtitle: 'ORD-8374-B',
+    date: '2026-07-15',
+    status: 'pending',
+    price: '$3,400.00',
+    orderId: 'ORD-8374-B',
+    image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=400',
+  },
+  {
+    id: 'ACT-1006',
+    type: 'space_booking',
+    title: 'The Glasshouse Studio',
+    subtitle: '4 Hours • 8 Guests',
+    date: '2026-07-25',
+    time: '3:00 PM - 7:00 PM',
+    duration: '4 hours',
+    guests: 8,
+    status: 'in_progress',
+    price: '$240.00',
+    image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=400',
+  },
+  {
+    id: 'ACT-1007',
+    type: 'service_request',
+    title: 'Custom Art Commission Framing',
+    subtitle: 'Assigned: Marcus Vance',
+    date: '2026-07-17',
+    status: 'pending',
+    description: 'Framing request for a custom 24x36 mixed-media canvas using charcoal oak wood.',
+    assignedStaff: 'Marcus Vance',
+    image: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=400',
+  },
+  {
+    id: 'ACT-1008',
+    type: 'event_workshop',
+    title: 'Intro to Ceramics & Clay Modeling',
+    subtitle: 'Instructor: Yuri Kovich',
+    date: '2026-07-28',
+    time: '11:00 AM - 1:00 PM',
+    instructor: 'Ceramicist Yuri Kovich',
+    status: 'pending',
+    image: 'https://images.unsplash.com/photo-1565192647048-f997ed87f5e2?q=80&w=400',
+  },
+  {
+    id: 'ACT-1009',
+    type: 'store_order',
+    title: 'Echoes of Light (Fine Art Print)',
+    subtitle: 'ORD-7362-C',
+    date: '2026-07-10',
+    status: 'cancelled',
+    price: '$450.00',
+    orderId: 'ORD-7362-C',
+    image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=400',
+  },
+  {
+    id: 'ACT-1010',
+    type: 'space_booking',
+    title: 'Exhibition Gallery Hall',
+    subtitle: '12 Hours • 50 Guests',
+    date: '2026-07-15',
+    time: '9:00 AM - 9:00 PM',
+    duration: '12 hours',
+    guests: 50,
+    price: '$1,200.00',
+    image: 'https://images.unsplash.com/photo-1531050171654-a78b74134a57?q=80&w=400',
+  },
+  {
+    id: 'ACT-1011',
+    type: 'service_request',
+    title: 'Digital Art Print Archiving',
+    subtitle: 'Assigned: Sarah Jenkins',
+    date: '2026-07-10',
+    status: 'completed',
+    description: 'High-resolution 1200dpi scanning and digital touch-up of charcoal sketches.',
+    assignedStaff: 'Sarah Jenkins',
+    image: 'https://images.unsplash.com/photo-1561214115-f2f134cc4912?q=80&w=400',
+  },
+  {
+    id: 'ACT-1012',
+    type: 'event_workshop',
+    title: 'Sip & Paint Night: Neon Canvas',
+    subtitle: 'Instructor: Shania Twain',
+    date: '2026-07-14',
+    time: '7:00 PM - 10:00 PM',
+    instructor: 'Artist Shania Twain',
+    status: 'completed',
+    image: 'https://images.unsplash.com/photo-1579783928621-7a13d66a62d1?q=80&w=400',
+  },
+];
+
+export const getActivitiesSummary = (activities) => {
+  return activities.reduce(
+    (summary, activity) => {
+      summary.total += 1;
+      if (activity.status === 'pending') {
+        summary.pending += 1;
+      } else if (activity.status === 'completed') {
+        summary.completed += 1;
+      } else if (activity.status === 'cancelled') {
+        summary.cancelled += 1;
+      }
+      return summary;
+    },
+    { total: 0, pending: 0, completed: 0, cancelled: 0 }
+  );
+};
